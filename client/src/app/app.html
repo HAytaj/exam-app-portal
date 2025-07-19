@@ -1,0 +1,233 @@
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0
+          .708l-7 7a.5.5 0 0
+          1-.708 0l-3.5-3.5a.5.5 0
+          1 1 .708-.708L6.5
+          10.293l6.646-6.647a.5.5
+          0 0 1 .708 0z"
+        />
+      </symbol>
+      <!-- More SVG symbols (omitted for brevity) -->
+    </svg>
+
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" aria-hidden="true">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">
+          Toggle theme
+        </span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50" aria-hidden="true">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" aria-hidden="true">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Inline the rest of your SVG path symbols here for brevity -->
+
+    <header
+      class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow"
+      data-bs-theme="dark"
+    >
+      <a
+        class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white"
+        href="#"
+      >
+        İmtahan Qeydiyyatı Proqramı
+      </a>
+      <ul class="navbar-nav flex-row d-md-none">
+        <li class="nav-item text-nowrap">
+          <button
+            class="nav-link px-3 text-white"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSearch"
+            aria-controls="navbarSearch"
+            aria-expanded="false"
+            aria-label="Toggle search"
+          >
+            <svg class="bi" aria-hidden="true">
+              <use xlink:href="#search"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="nav-item text-nowrap">
+          <button
+            class="nav-link px-3 text-white"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu"
+            aria-controls="sidebarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <svg class="bi" aria-hidden="true">
+              <use xlink:href="#list"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+      <div
+        id="navbarSearch"
+        class="navbar-search w-100 collapse"
+      >
+        <input
+          class="form-control w-100 rounded-0 border-0"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div
+          class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary"
+        >
+          <div
+            class="offcanvas-md offcanvas-end bg-body-tertiary"
+            tabindex="-1"
+            id="sidebarMenu"
+            aria-labelledby="sidebarMenuLabel"
+          >
+            <div class="offcanvas-header">
+              <h5
+                class="offcanvas-title"
+                id="sidebarMenuLabel"
+              >
+                Company name
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                data-bs-target="#sidebarMenu"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto"
+            >
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a
+                    class="nav-link d-flex align-items-center gap-2 active"
+                    aria-current="page"
+                    routerLink="registersubject"
+                  >
+                    <svg class="bi" aria-hidden="true">
+                      <use xlink:href="#house-fill"></use>
+                    </svg>
+                    <h5>Dərslər</h5>
+                  </a>
+                </li>
+
+                 <li class="nav-item">
+                  <a
+                    class="nav-link d-flex align-items-center gap-2 active"
+                    aria-current="page"
+                    routerLink="/registerstudent"
+                  >
+                    <svg class="bi" aria-hidden="true">
+                      <use xlink:href="#house-fill"></use>
+                    </svg>
+                    <h5>Şagirdlər</h5>
+                  </a>
+                </li>
+
+                 <li class="nav-item">
+                  <a
+                    class="nav-link d-flex align-items-center gap-2 active"
+                    aria-current="page"
+                    routerLink="/registerexam"
+                  >
+                    <svg class="bi" aria-hidden="true">
+                      <use xlink:href="#house-fill"></use>
+                    </svg>
+                    <h5>İmtahanlar</h5>
+                  </a>
+                </li>
+                <!-- Additional nav items omitted for brevity -->
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <main
+          class="col-md-9 ms-sm-auto col-lg-10 px-md-4"
+        >
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2 class="h2">{{ this.pageTitle }}</h2>
+          </div>
+
+           <router-outlet></router-outlet>
+
+        </main>
+      </div>
+    </div>
+
+   

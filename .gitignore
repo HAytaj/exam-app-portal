@@ -1,0 +1,15 @@
+# .NET artifacts
+api/**/bin/
+api/**/obj/
+*.db
+*.suo
+*.user
+
+# Angular artifacts
+client/node_modules/
+client/dist/
+client/.angular/cache/
+
+# User secrets / config
+.env
+*.log

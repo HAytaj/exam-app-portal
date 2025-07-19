@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gy3f9AI7Fz4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MSI\\Desktop\\My Projects\\ExamApp\\ExamAppApiSolution\\ExamAppApi.Application\\ExamAppApi.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MSI\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

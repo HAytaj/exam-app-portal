@@ -1,0 +1,15 @@
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\bin\Debug\net8.0\ExamAppApi.Application.deps.json
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\bin\Debug\net8.0\ExamAppApi.Application.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\bin\Debug\net8.0\ExamAppApi.Application.pdb
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\bin\Debug\net8.0\ExamAppApi.Core.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\bin\Debug\net8.0\ExamAppApi.Core.pdb
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppApi.Application.csproj.AssemblyReference.cache
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppApi.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppApi.Application.AssemblyInfoInputs.cache
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppApi.Application.AssemblyInfo.cs
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppApi.Application.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppA.3916BF46.Up2Date
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppApi.Application.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\refint\ExamAppApi.Application.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ExamAppApi.Application.pdb
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApi.Application\obj\Debug\net8.0\ref\ExamAppApi.Application.dll

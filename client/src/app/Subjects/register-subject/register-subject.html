@@ -1,0 +1,140 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <!-- Dərsin Kodu -->
+  <div class="mb-3">
+    <label for="code" class="form-label">Dərsin kodu</label>
+    <input
+      type="text"
+      class="form-control"
+      id="code"
+      name="code"
+      aria-describedby="code"
+      #codeInput="ngModel"
+      required
+      maxlength="3"
+      pattern="^[A-Za-z]{3}$"
+      [(ngModel)]="subjectData.code"
+      [class.is-invalid]="codeInput.touched && (codeInput.invalid || isDuplicateSubjectCode(subjectData))"
+      [class.is-valid]="codeInput.touched && codeInput.valid && !isDuplicateSubjectCode(subjectData)"
+    />
+    <div *ngIf="codeInput.touched && (codeInput.invalid || isDuplicateSubjectCode(subjectData))" class="invalid-feedback">
+      <ng-container *ngIf="codeInput.errors?.['required']; else checkDuplicateOrInvalid">
+        Kod boş ola bilməz.
+      </ng-container>
+
+      <ng-template #checkDuplicateOrInvalid>
+        <ng-container *ngIf="isDuplicateSubjectCode(subjectData); else invalidChars">
+          Bu dərs kodu artıq mövcuddur.
+        </ng-container>
+      </ng-template>
+
+      <ng-template #invalidChars>
+        <div *ngIf="codeInput.errors?.['pattern']">
+          Yalnız ingilis hərfləri və 3 simvol ola bilər.
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- Dərsin Adı -->
+  <div class="mb-3">
+    <label for="subjectName" class="form-label">Dərsin adı</label>
+    <input
+      type="text"
+      class="form-control"
+      id="subjectName"
+      name="subjectName"
+      aria-describedby="subjectName"
+      #subjectName="ngModel"
+      required
+      maxlength="30"
+      [(ngModel)]="subjectData.subjectName"
+      [class.is-invalid]="subjectName.invalid && subjectName.touched"
+      [class.is-valid]="subjectName.valid && subjectName.touched"
+    />
+    <div *ngIf="subjectName.invalid && subjectName.touched" class="invalid-feedback">
+      Dərs adı boş ola bilməz.
+    </div>
+  </div>
+
+  <!-- Sinif seçimi -->
+  <div class="mb-3">
+    <label for="classes" class="form-label">Sinif seçin</label>
+    <select
+      id="classes"
+      name="selectedClassId"
+      class="form-select"
+      #classesInput="ngModel"
+      required
+      [(ngModel)]="selectedClassId"
+      (change)="onClassChange()"
+      [class.is-invalid]="classesInput.invalid && classesInput.touched"
+      [class.is-valid]="classesInput.valid && classesInput.touched"
+    >
+      <option value="">-- Seçin --</option>
+      <option *ngFor="let class of classes" [value]="class.id">
+        {{ class.classNumber }}
+      </option>
+    </select>
+    <div *ngIf="classesInput.invalid && classesInput.touched" class="invalid-feedback">
+      Sinif adı boş ola bilməz.
+    </div>
+  </div>
+
+  <!-- Müəllim seçimi -->
+  <div class="mb-3">
+    <label for="teachers" class="form-label">Müəllim seçin</label>
+    <select
+      id="teachers"
+      name="selectedTeacherId"
+      class="form-select"
+      required
+      #teachersInput="ngModel"
+      [(ngModel)]="selectedTeacherId"
+      (change)="onTeacherChange()"
+      [class.is-invalid]="teachersInput.invalid && teachersInput.touched"
+      [class.is-valid]="teachersInput.valid && teachersInput.touched"
+    >
+      <option value="">-- Seçin --</option>
+      <option *ngFor="let teacher of teachers" [value]="teacher.id">
+        {{ teacher.teacherName }} {{ teacher.teacherSurname }} 
+      </option>
+    </select>
+    <div *ngIf="teachersInput.invalid && teachersInput.touched" class="invalid-feedback">
+      Müəllim adı boş ola bilməz.
+    </div>
+  </div>
+
+  <!-- Submit düyməsi -->
+  <button type="submit" class="btn btn-primary">
+    {{ subjectData.id === 0 ? 'Saxla' : 'Yenilə' }}
+  </button>
+</form>
+
+<hr />
+
+<!-- Cədvəl -->
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-primary">
+    <tr>
+      <th>#</th>
+      <th>Kod</th>
+      <th>Dərsin Adı</th>
+      <th>Müəllim</th>
+      <th>Sinif</th>
+      <th>Əməliyyatlar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let subject of subjects; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ subject.code }}</td>
+      <td>{{ subject.subjectName }}</td>
+      <td>{{ subject.teacherFullName }}</td>
+      <td>{{ subject.classNumber }}</td>
+      <td>
+        <button (click)="onUpdateSubject(subject)" class="btn btn-warning btn-sm me-2">Düzəlt</button>
+        <button (click)="onDeleteSubject(subject)" class="btn btn-danger btn-sm">Sil</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

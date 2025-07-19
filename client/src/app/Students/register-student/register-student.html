@@ -1,0 +1,122 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  <!-- Şagird Nömrəsi -->
+  <div class="mb-3">
+    <label for="studentNumber" class="form-label">Nömrəsi</label>
+    <input
+      type="number"
+      class="form-control"
+      id="studentNumber"
+      name="studentNumber"
+      required
+      min="1"
+      max="99999"
+      [(ngModel)]="studentData.studentNumber"
+      #studentNumberInput="ngModel"
+      [class.is-valid]="studentNumberInput.touched && studentNumberInput.valid && !isDuplicateStudentNumber(studentData)"
+      [class.is-invalid]="studentNumberInput.touched && (studentNumberInput.invalid || isDuplicateStudentNumber(studentData))"
+    />
+
+    <div *ngIf="studentNumberInput.touched && studentNumberInput.invalid" class="invalid-feedback">
+      Şagird nömrəsi boş ola bilməz.
+    </div>
+    <div *ngIf="isDuplicateStudentNumber(studentData)" class="invalid-feedback">
+      Bu şagird nömrəsi artıq mövcuddur.
+    </div>
+    <div *ngIf="studentNumberInput.touched && (studentNumberInput.errors?.['min'] || studentNumberInput.errors?.['max'])"
+      class="invalid-feedback">
+      Nömrə 1 ilə 99999 arasında olmalıdır.
+    </div>
+  </div>
+
+  <!-- Şagird Adı -->
+  <div class="mb-3">
+    <label for="studentName" class="form-label">Adı</label>
+    <input
+      type="text"
+      class="form-control"
+      id="studentName"
+      name="studentName"
+      required
+      maxlength="30"
+      [(ngModel)]="studentData.studentName"
+      #studentNameInput="ngModel"
+      [class.is-valid]="studentNameInput.valid && studentNameInput.touched"
+      [class.is-invalid]="studentNameInput.invalid && studentNameInput.touched"
+    />
+    <div class="invalid-feedback">Şagird adı boş ola bilməz.</div>
+  </div>
+
+  <!-- Şagird Soyadı -->
+  <div class="mb-3">
+    <label for="studentSurname" class="form-label">Soyadı</label>
+    <input
+      type="text"
+      class="form-control"
+      id="studentSurname"
+      name="studentSurname"
+      required
+      maxlength="30"
+      [(ngModel)]="studentData.studentSurname"
+      #studentSurnameInput="ngModel"
+      [class.is-valid]="studentSurnameInput.valid && studentSurnameInput.touched"
+      [class.is-invalid]="studentSurnameInput.invalid && studentSurnameInput.touched"
+    />
+    <div class="invalid-feedback">Şagird soyadı boş ola bilməz.</div>
+  </div>
+
+  <!-- Sinif Seçimi -->
+  <div class="mb-3">
+    <label for="classes" class="form-label">Sinif seçin</label>
+    <select
+      id="classes"
+      name="selectedClassId"
+      class="form-select"
+      required
+      [(ngModel)]="selectedClassId"
+      (change)="onClassChange()"
+      #studentClassInput="ngModel"
+      [class.is-valid]="studentClassInput.valid && studentClassInput.touched"
+      [class.is-invalid]="studentClassInput.invalid && studentClassInput.touched"
+    >
+      <option value="">-- Seçin --</option>
+      <option *ngFor="let class of classes" [value]="class.id">
+        {{ class.classNumber }}
+      </option>
+    </select>
+    <div class="invalid-feedback">Sinif boş ola bilməz.</div>
+  </div>
+
+  <!-- Submit düyməsi -->
+  <button type="submit" class="btn btn-primary">
+    {{ studentData.id === 0 ? 'Saxla' : 'Yenilə' }}
+  </button>
+</form>
+
+<hr />
+
+<!-- Şagirdlər cədvəli -->
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-primary">
+    <tr>
+      <th>#</th>
+      <th>Şagird Nömrəsi</th>
+      <th>Adı</th>
+      <th>Soyadı</th>
+      <th>Sinif</th>
+      <th>Əməliyyatlar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ student.studentNumber }}</td>
+      <td>{{ student.studentName }}</td>
+      <td>{{ student.studentSurname }}</td>
+      <td>{{ student.classNumber }}</td>
+      <td>
+        <button (click)="onUpdateStudent(student)" class="btn btn-warning btn-sm me-2">Düzəlt</button>
+        <button (click)="onDeleteStudent(student)" class="btn btn-danger btn-sm">Sil</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

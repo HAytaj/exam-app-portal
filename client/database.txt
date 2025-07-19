@@ -1,0 +1,50 @@
+create database examapp;
+
+use examapp;
+
+create table classes
+(
+id int primary key identity,
+class_number tinyint
+)
+
+
+create table teachers
+(
+id int primary key identity,
+teacher_name nvarchar(30) not null,
+teacher_surname nvarchar(30) not null,
+)
+
+create table subjects
+(
+id int primary key identity,
+code char(3) not null,
+subject_name nvarchar(30) not null,
+class_id int,
+teacher_id int
+foreign key (class_id) references classes(id),
+foreign key (teacher_id) references teachers(id),
+
+)
+
+create table students
+(
+id int primary key identity,
+student_number int not null,
+student_name nvarchar(30) not null,
+student_surname nvarchar(30) not null,
+class_id int not null foreign key references classes(id),
+
+)
+
+
+create table exams
+(
+id int primary key identity,
+subject_id int not null foreign key references subjects(id),
+student_id int not null foreign key references students(id),
+exam_date date not null,
+grade tinyint not null
+)
+

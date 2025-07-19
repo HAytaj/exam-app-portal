@@ -1,0 +1,118 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" class="needs-validation" novalidate>
+
+  <!-- Dərsin Kodu -->
+  <div class="mb-3">
+    <label for="code" class="form-label">Dərsin kodu</label>
+    <input
+      type="text"
+      class="form-control"
+      id="code"
+      name="code"
+      appEnglishLettersOnly
+      required
+      maxlength="3"
+      [(ngModel)]="examData.code"
+      #codeInput="ngModel"
+      [class.is-invalid]="codeInput.touched && (codeInput.invalid || !subjectExists(examData.code))"
+      [class.is-valid]="codeInput.touched && (codeInput.valid || subjectExists(examData.code))"
+    />
+    <div class="invalid-feedback">
+      Dərs kodu düzgün daxil edilməyib və ya mövcud deyil.
+    </div>
+  </div>
+
+  <!-- Şagird Nömrəsi -->
+  <div class="mb-3">
+    <label for="studentNumber" class="form-label">Şagirdin nömrəsi</label>
+    <input
+      type="number"
+      class="form-control"
+      id="studentNumber"
+      name="studentNumber"
+      required
+      min="1"
+      max="99999"
+      [(ngModel)]="examData.studentNumber"
+      #studentNumberInput="ngModel"
+      [class.is-invalid]="studentNumberInput.touched && (studentNumberInput.invalid  || !studentExists(examData.studentNumber))"
+      [class.is-valid]="studentNumberInput.touched && ( studentNumberInput.valid || studentExists(examData.studentNumber))"
+    />
+    <div class="invalid-feedback">
+      Şagirdin nömrəsi düzgün daxil edilməyib və ya mövcud deyil.
+    </div>
+  </div>
+
+  <!-- İmtahan Tarixi -->
+  <div class="mb-3">
+    <label for="examDate" class="form-label">İmtahan tarixi</label>
+    <input
+      type="date"
+      class="form-control"
+      id="examDate"
+      name="examDate"
+      required
+      [(ngModel)]="examData.examDate"
+      #examDateInput="ngModel"
+      [class.is-invalid]="examDateInput.invalid && examDateInput.touched"
+      [class.is-valid]="examDateInput.valid && examDateInput.touched"
+    />
+    <div class="invalid-feedback">
+      İmtahan tarixi boş ola bilməz.
+    </div>
+  </div>
+
+  <!-- Qiymət -->
+  <div class="mb-3">
+    <label for="score" class="form-label">Qiyməti</label>
+    <input
+      type="number"
+      class="form-control"
+      id="score"
+      name="score"
+      required
+      min="0"
+      max="9"
+      [(ngModel)]="examData.score"
+      #scoreInput="ngModel"
+      [class.is-invalid]="scoreInput.invalid && scoreInput.touched"
+      [class.is-valid]="scoreInput.valid && scoreInput.touched"
+    />
+    <div class="invalid-feedback">
+      Qiymət 0 ilə 9 arasında bir rəqəm olmalıdır.
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" class="btn btn-primary">
+    {{ examData.id === 0 ? 'Yadda saxla' : 'Yenilə' }}
+  </button>
+</form>
+
+<hr />
+
+<!-- İmtahanlar Cədvəli -->
+<table class="table table-striped table-hover table-bordered">
+  <thead class="table-primary">
+    <tr>
+      <th>#</th>
+      <th>Dərsin Kodu</th>
+      <th>Şagirdin Nömrəsi</th>
+      <th>İmtahan Tarixi</th>
+      <th>Qiymət</th>
+      <th>Əməliyyatlar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let exam of exams; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ exam.code }}</td>
+      <td>{{ exam.studentNumber }}</td>
+      <td>{{ exam.examDate }}</td>
+      <td>{{ exam.score }}</td>
+      <td>
+        <button (click)="onUpdateExam(exam)" class="btn btn-warning btn-sm me-2">Düzəlt</button>
+        <button (click)="onDeleteExam(exam)" class="btn btn-danger btn-sm">Sil</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

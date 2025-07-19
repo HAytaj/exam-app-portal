@@ -1,0 +1,15 @@
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\bin\Debug\net8.0\ExamAppApiInfrastructure.deps.json
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\bin\Debug\net8.0\ExamAppApiInfrastructure.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\bin\Debug\net8.0\ExamAppApiInfrastructure.pdb
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\bin\Debug\net8.0\ExamAppApi.Core.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\bin\Debug\net8.0\ExamAppApi.Core.pdb
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppApiInfrastructure.csproj.AssemblyReference.cache
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppApiInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppApiInfrastructure.AssemblyInfoInputs.cache
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppApiInfrastructure.AssemblyInfo.cs
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppApiInfrastructure.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppA.717D7B94.Up2Date
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppApiInfrastructure.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\refint\ExamAppApiInfrastructure.dll
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ExamAppApiInfrastructure.pdb
+C:\Users\MSI\Desktop\My Projects\ExamApp\ExamAppApiSolution\ExamAppApiInfrastructure\obj\Debug\net8.0\ref\ExamAppApiInfrastructure.dll
